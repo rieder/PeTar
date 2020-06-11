@@ -4,7 +4,7 @@ from amuse.community.interface.gd import GravitationalDynamicsInterface
 from amuse.community.interface.gd import GravityFieldInterface
 from amuse.community.interface.gd import GravityFieldCode
 
-class petarInterface(CodeInterface,
+class PetarInterface(CodeInterface,
                      LiteratureReferencesMixIn,
                      GravitationalDynamicsInterface,
                      StoppingConditionInterface,
@@ -26,13 +26,13 @@ class petarInterface(CodeInterface,
         LiteratureReferencesMixIn.__init__(self)
         
     
-class petar(GravitationalDynamics, GravityFieldCode):
+class Petar(GravitationalDynamics, GravityFieldCode):
 
     def __init__(self, convert_nbody = None, **keyword_arguments):
         self.stopping_conditions = StoppingConditions(self)
 
         GravitationalDynamics.__init__(self, 
-                                       petarInterface(**keyword_arguments), 
+                                       PetarInterface(**keyword_arguments), 
                                        convert_nbody, 
                                        **keyword_arguments)
 
